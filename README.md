@@ -53,3 +53,6 @@ A menu bar, a left navigation pane with a heading for each group of pages, and t
 
 ## Building
 The apps reference this project by relative path (`..\..\..\hcw-ui\Hcw.Ui\Hcw.Ui.csproj`), so check it out beside them. It targets Windows App SDK 1.6, the lowest version either app uses.
+
+## Licence
+The code is MIT licensed (`LICENSE`). The marks in `brand/` are not; see `brand/LICENSE.md`.
