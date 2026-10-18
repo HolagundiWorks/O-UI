@@ -10,7 +10,7 @@ var output = args.Length > 0 ? args[0] : Path.Combine(AppContext.BaseDirectory, 
 var apps = new (string Folder, string Name, Color Plate)[]
 {
     ("studio", "O-Studio", ColorTranslator.FromHtml("#FF6B00")),
-    ("metra", "O-Metra", ColorTranslator.FromHtml("#1F5FD1")),
+    ("coreop", "O-CoreOp", ColorTranslator.FromHtml("#1F5FD1")),
     ("draft", "O-Draft", ColorTranslator.FromHtml("#17181B")),
     ("osas", "OSAS", ColorTranslator.FromHtml("#17181B")),
 };
@@ -160,7 +160,7 @@ static Bitmap Lockup(string name, Color plate, bool suite = false)
     if (suite)
     {
         g.DrawString("Open Source Architecture Suit", line, softBrush, 660, 360);
-        g.DrawString("O-Studio · O-Metra · O-Draft", small, softBrush, 660, 440);
+        g.DrawString("O-Studio · O-CoreOp · O-Draft", small, softBrush, 660, 440);
         return bitmap;
     }
     g.DrawString("Open Source Architecture Suit", line, softBrush, 660, 360);

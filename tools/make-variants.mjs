@@ -1,6 +1,6 @@
 // Generates the per-app theme files from the templates, so there is one place to change how a theme is built.
 //   node tools/make-variants.mjs
-// Each app has an accent: O-Studio orange, O-Metra blue, O-Draft black. The accents are in Themes/SuiteAccent.<Name>.xaml.
+// Each app has an accent: O-Studio orange, O-CoreOp blue, O-Draft black. The accents are in Themes/SuiteAccent.<Name>.xaml.
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -9,7 +9,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "Hcw.
 
 const accents = {
   Orange: { app: "O-Studio", accent: "#FF6B00", hover: "#F26400", pressed: "#E65F00", text: "#A83F00", wash: "#FFDCC2", on: "#17181B" },
-  Blue: { app: "O-Metra", accent: "#1F5FD1", hover: "#1A52B8", pressed: "#15449A", text: "#1A52B8", wash: "#D3E3FF", on: "#FFFFFF" },
+  Blue: { app: "O-CoreOp", accent: "#1F5FD1", hover: "#1A52B8", pressed: "#15449A", text: "#1A52B8", wash: "#D3E3FF", on: "#FFFFFF" },
   Black: { app: "O-Draft", accent: "#1B1C20", hover: "#34363C", pressed: "#4B4E56", text: "#17181B", wash: "#E4E3DE", on: "#FFFFFF" },
 };
 

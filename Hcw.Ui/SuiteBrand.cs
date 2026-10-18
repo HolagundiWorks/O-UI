@@ -6,7 +6,7 @@ public enum SuiteApp
     /// <summary>O-Studio: the office. Orange.</summary>
     Studio,
 
-    /// <summary>O-Metra: quantities and costing. Blue.</summary>
+    /// <summary>O-CoreOp: quantities and costing. Blue.</summary>
     Metra,
 
     /// <summary>O-Draft: drafting. Black.</summary>
@@ -22,7 +22,7 @@ public static class SuiteBrand
     public static string Name(SuiteApp app) => app switch
     {
         SuiteApp.Studio => "O-Studio",
-        SuiteApp.Metra => "O-Metra",
+        SuiteApp.Metra => "O-CoreOp",
         _ => "O-Draft",
     };
 

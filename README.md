@@ -1,11 +1,11 @@
 # Hcw.Ui
 
-The shared design of **OSAS, the Open Source Architecture Suit**: its colours, text styles, control defaults, marks and a few layout controls. O-Studio (the office app) and O-Metra (quantities, estimates and billing) use it now; O-Draft (drafting) is meant to follow. It is a WinUI 3 class library for .NET 8 under the MIT licence (the marks in `brand/` are separate, see `brand/LICENSE.md`). MIT code can be used inside O-Metra, which is AGPL-3.0, and inside O-Draft, which is MIT or Apache-2.0.
+The shared design of **OSAS, the Open Source Architecture Suit**: its colours, text styles, control defaults, marks and a few layout controls. O-Studio (the office app) and O-CoreOp (quantities, estimates and billing) use it now; O-Draft (drafting) is meant to follow. It is a WinUI 3 class library for .NET 8 under the MIT licence (the marks in `brand/` are separate, see `brand/LICENSE.md`). MIT code can be used inside O-CoreOp, which is AGPL-3.0, and inside O-Draft, which is MIT or Apache-2.0.
 
 | App | Was | Accent |
 |---|---|---|
 | O-Studio | AOS | Orange `#FF6B00`, ink text on it |
-| O-Metra | AQC | Blue `#1F5FD1`, white text on it |
+| O-CoreOp | AQC | Blue `#1F5FD1`, white text on it |
 | O-Draft | AAD | Black `#1B1C20`, white text on it |
 
 ## What is in it
@@ -17,7 +17,7 @@ The shared design of **OSAS, the Open Source Architecture Suit**: its colours, t
 | `Themes/SuiteStyles.xaml` | Text styles (page title, section title, body, secondary, caption, table header and cell), defaults for buttons, text boxes and combo boxes, the primary button in the accent colour, a card and a chip |
 | `Themes/SuiteNavigation.<Accent>.xaml`, `SuiteNavigation.cs` | The look of the left navigation pane: ink indicator, accent wash on the selected page |
 | `SuiteBrand.cs` | The names of the suite and its apps (`SuiteApp.Studio`, `.Metra`, `.Draft`) |
-| `brand/`, `tools/Brand` | The marks: the O-Metra logo redrawn as geometry in each app's colour, as PNG, ICO, a lockup and the Windows tiles. Run `dotnet run --project tools/Brand -- brand` to draw them again |
+| `brand/`, `tools/Brand` | The marks: the O-CoreOp logo redrawn as geometry in each app's colour, as PNG, ICO, a lockup and the Windows tiles. Run `dotnet run --project tools/Brand -- brand` to draw them again |
 | `Controls/FlexBar.cs` | A row of buttons that wraps when the page is narrow |
 
 Accent colours are for fills and marks. Use `SuiteAccentText` for text in the accent colour. Contrast on white: ink 17.2, ink soft 8.9. Orange text 6.2, blue text 7.7. Ink on orange 6.3, white on blue 5.8.
