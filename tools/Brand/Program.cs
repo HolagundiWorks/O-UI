@@ -26,6 +26,7 @@ foreach (var (folder, name, plate) in apps)
     Mark(256, plate, suite: suite).Save(Path.Combine(dir, "mark-256.png"), ImageFormat.Png);
     Ico(Path.Combine(dir, "app.ico"), plate, suite);
     Lockup(name, plate, suite).Save(Path.Combine(dir, "lockup.png"), ImageFormat.Png);
+    File.WriteAllText(Path.Combine(dir, "mark.svg"), Svg(name, plate, suite));
     if (suite)
         continue;
 
@@ -37,6 +38,27 @@ foreach (var (folder, name, plate) in apps)
     Wide(620, 300, plate).Save(Path.Combine(tiles, "SplashScreen.png"), ImageFormat.Png);
 }
 Console.WriteLine("Written to " + output);
+
+// The same mark as geometry in a 194 by 194 box: a half ring open to the right (radius 69, stroke 18), a smaller half ring below
+// the centre (radius 50, stroke 12), and a ring at the centre (radius 18.5, stroke 5), all white, centred at (107, 96).
+static string Svg(string name, Color plate, bool suite)
+{
+    var fill = $"#{plate.R:X2}{plate.G:X2}{plate.B:X2}";
+    var strip = suite
+        ? "  <rect x=\"0\" y=\"177\" width=\"64.7\" height=\"17\" fill=\"#FF6B00\"/>\n  <rect x=\"64.7\" y=\"177\" width=\"64.7\" height=\"17\" fill=\"#1F5FD1\"/>\n  <rect x=\"129.3\" y=\"177\" width=\"64.7\" height=\"17\" fill=\"#C9C6BC\"/>\n"
+        : "";
+    return $"""
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 194 194" width="194" height="194">
+  <title>{name}</title>
+  <rect width="194" height="194" fill="{fill}"/>
+{strip}  <g fill="none" stroke="#fff">
+    <path d="M107 27A69 69 0 0 0 107 165" stroke-width="18"/>
+    <path d="M57 96A50 50 0 0 0 157 96" stroke-width="12"/>
+    <circle cx="107" cy="96" r="18.5" stroke-width="5"/>
+  </g>
+</svg>
+""";
+}
 
 static Bitmap NewBitmap(int w, int h) => new(w, h, PixelFormat.Format32bppArgb);
 
