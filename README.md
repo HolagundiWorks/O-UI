@@ -1,6 +1,6 @@
 # Hcw.Ui
 
-The shared design of **OSAS, the Open Source Architecture Suit**: its colours, text styles, control defaults, marks and a few layout controls. O-Studio (the office app) and O-Metra (quantities, estimates and billing) use it now; O-Draft (drafting) is meant to follow. It is a WinUI 3 class library for .NET 8 with no licence chosen yet; that is the owner's decision, and O-Metra is AGPL-3.0, so it matters before this is published.
+The shared design of **OSAS, the Open Source Architecture Suit**: its colours, text styles, control defaults, marks and a few layout controls. O-Studio (the office app) and O-Metra (quantities, estimates and billing) use it now; O-Draft (drafting) is meant to follow. It is a WinUI 3 class library for .NET 8 under the MIT licence (the marks in `brand/` are separate, see `brand/LICENSE.md`). MIT code can be used inside O-Metra, which is AGPL-3.0, and inside O-Draft, which is MIT or Apache-2.0.
 
 | App | Was | Accent |
 |---|---|---|
