@@ -1,17 +1,26 @@
 # Hcw.Ui
 
-The shared design of the HolagundiWorks desktop apps. At the moment AOS (the office app) and AQC (quantities and costing) use it. It is a WinUI 3 class library for .NET 8 with no licence chosen yet; that is the owner's decision, and AQC is AGPL-3.0, so it matters before this is published.
+The shared design of **OSAS, the Open Source Architecture Suit**: its colours, text styles, control defaults, marks and a few layout controls. O-Studio (the office app) and O-Metra (quantities, estimates and billing) use it now; O-Draft (drafting) is meant to follow. It is a WinUI 3 class library for .NET 8 with no licence chosen yet; that is the owner's decision, and O-Metra is AGPL-3.0, so it matters before this is published.
+
+| App | Was | Accent |
+|---|---|---|
+| O-Studio | AOS | Orange `#FF6B00`, ink text on it |
+| O-Metra | AQC | Blue `#1F5FD1`, white text on it |
+| O-Draft | AAD | Black `#1B1C20`, white text on it |
 
 ## What is in it
 | File | What it does |
 |---|---|
-| `Themes/SuiteColors.xaml` | The colours, in one place: warm paper, ink, and the amber of the product mark. Change a colour here and both apps follow |
-| `Themes/SuiteLight.xaml`, `SuiteHighContrast.xaml` | The light theme (app brushes plus the overrides the controls need) and the high-contrast theme |
-| `Themes/SuiteStyles.xaml` | Text styles (page title, section title, body, secondary, caption, table header and cell), defaults for buttons, text boxes and combo boxes, the amber primary button, a card and a chip |
-| `Themes/SuiteNavigation.xaml`, `SuiteNavigation.cs` | The look of the left navigation pane: ink indicator, amber wash on the selected page |
+| `Themes/SuiteColors.xaml` | The neutral colours, in one place: warm paper and ink |
+| `Themes/SuiteAccent.Orange.xaml`, `.Blue.xaml`, `.Black.xaml` | The accent of each app: fill, hover, pressed, text, selection wash, and the text colour on a fill |
+| `Themes/SuiteLight.<Accent>.xaml`, `SuiteHighContrast.xaml` | The light theme in that accent (app brushes plus the overrides the controls need), and the high-contrast theme. Generated from `Themes/templates` by `tools/make-variants.mjs` |
+| `Themes/SuiteStyles.xaml` | Text styles (page title, section title, body, secondary, caption, table header and cell), defaults for buttons, text boxes and combo boxes, the primary button in the accent colour, a card and a chip |
+| `Themes/SuiteNavigation.<Accent>.xaml`, `SuiteNavigation.cs` | The look of the left navigation pane: ink indicator, accent wash on the selected page |
+| `SuiteBrand.cs` | The names of the suite and its apps (`SuiteApp.Studio`, `.Metra`, `.Draft`) |
+| `brand/`, `tools/Brand` | The marks: the O-Metra logo redrawn as geometry in each app's colour, as PNG, ICO, a lockup and the Windows tiles. Run `dotnet run --project tools/Brand -- brand` to draw them again |
 | `Controls/FlexBar.cs` | A row of buttons that wraps when the page is narrow |
 
-Amber is for fills and marks. Use `SuiteAmberText` for amber text; amber on white is too faint to read. Contrast on white: ink 17.2, ink soft 8.9, amber text 7.0; ink on amber 11.6.
+Accent colours are for fills and marks. Use `SuiteAccentText` for text in the accent colour. Contrast on white: ink 17.2, ink soft 8.9. Orange text 6.2, blue text 7.7. Ink on orange 6.3, white on blue 5.8.
 
 ## Using it
 Reference the project, then in `App.xaml`:
@@ -20,12 +29,13 @@ Reference the project, then in `App.xaml`:
 <ResourceDictionary.MergedDictionaries>
     <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
     <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteColors.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteAccent.Orange.xaml"/>  <!-- or .Blue, .Black -->
     <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteStyles.xaml"/>
 </ResourceDictionary.MergedDictionaries>
 <ResourceDictionary.ThemeDictionaries>
     <ResourceDictionary x:Key="Light">
         <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteLight.xaml"/>
+            <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteLight.Orange.xaml"/>
         </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
     <ResourceDictionary x:Key="HighContrast">
@@ -36,7 +46,7 @@ Reference the project, then in `App.xaml`:
 </ResourceDictionary.ThemeDictionaries>
 ```
 
-and on each navigation pane: `Hcw.Ui.SuiteNavigation.Apply(navigationView);`. A system control keeps its own colours unless they are set on the control, which is why the pane needs that call.
+and on each navigation pane: `Hcw.Ui.SuiteNavigation.Apply(navigationView, Hcw.Ui.SuiteApp.Studio);`. A system control keeps its own colours unless they are set on the control, which is why the pane needs that call.
 
 ## Structure the apps share
 A menu bar, a left navigation pane with a heading for each group of pages, and the page beside it. AOS and AQC both follow this. The library holds the look; each app keeps its own pages.

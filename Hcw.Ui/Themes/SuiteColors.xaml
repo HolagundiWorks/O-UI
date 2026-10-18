@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  The suite's colours, in one place. Warm paper, ink, and amber taken from the product mark.
-  Amber is for fills and marks, never for small text: use SuiteAmberText for amber text.
-  Contrast on white: ink 17.2, ink soft 8.9, amber text 7.0. Ink on amber 11.6.
+  The suite's neutral colours, in one place: warm paper and ink. Each app adds its own accent (SuiteAccent.Orange, .Blue or .Black.xaml).
+  Accent colours are for fills and marks; text in the accent colour uses SuiteAccentText. Contrast on white: ink 17.2, ink soft 8.9.
 -->
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -12,11 +11,6 @@
     <Color x:Key="SuiteSurface">#FFFFFF</Color>
     <Color x:Key="SuiteInk">#17181B</Color>
     <Color x:Key="SuiteInkSoft">#45484D</Color>
-    <Color x:Key="SuiteAmber">#FFC20E</Color>
-    <Color x:Key="SuiteAmberHover">#F2B400</Color>
-    <Color x:Key="SuiteAmberPressed">#D9A200</Color>
-    <Color x:Key="SuiteAmberText">#7A5900</Color>
-    <Color x:Key="SuiteAmberWash">#FFE08A</Color>
     <Color x:Key="SuiteEdge">#DAD7CD</Color>
     <Color x:Key="SuiteEdgeStrong">#8A877D</Color>
     <Color x:Key="SuiteHover">#ECE9DF</Color>

@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- The light theme: the app brushes and the overrides for the system controls. Merge it into the app's own Light theme dictionary in App.xaml (see README). -->
+<!-- Generated from templates/SuiteLight.template.xaml by tools/make-variants.mjs. The light theme: the app brushes and the overrides for the system controls. Merge it into the app's own Light theme dictionary in App.xaml (see README). -->
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteColors.xaml"/>
-    </ResourceDictionary.MergedDictionaries>
+        <!--MERGE-->
     <StaticResource x:Key="AppBackgroundColor" ResourceKey="SuiteBackground"/>
     <StaticResource x:Key="SidebarBackgroundColor" ResourceKey="SuiteSidebar"/>
     <StaticResource x:Key="SurfaceBackgroundColor" ResourceKey="SuiteSurface"/>
     <StaticResource x:Key="TextPrimaryColor" ResourceKey="SuiteInk"/>
     <StaticResource x:Key="TextSecondaryColor" ResourceKey="SuiteInkSoft"/>
-    <StaticResource x:Key="BrandAccentColor" ResourceKey="SuiteAmber"/>
-    <StaticResource x:Key="BrandAccentAccessibleColor" ResourceKey="SuiteAmberText"/>
+    <StaticResource x:Key="BrandAccentColor" ResourceKey="SuiteAccent"/>
+    <StaticResource x:Key="BrandAccentAccessibleColor" ResourceKey="SuiteAccentText"/>
     <StaticResource x:Key="BorderSubtleColor" ResourceKey="SuiteEdge"/>
     <StaticResource x:Key="BorderStrongColor" ResourceKey="SuiteEdgeStrong"/>
     <StaticResource x:Key="FocusIndicatorColor" ResourceKey="SuiteInk"/>
-    <StaticResource x:Key="EmphasisFillColor" ResourceKey="SuiteAmber"/>
-    <StaticResource x:Key="EmphasisHoverColor" ResourceKey="SuiteAmberHover"/>
-    <StaticResource x:Key="EmphasisPressedColor" ResourceKey="SuiteAmberPressed"/>
-    <StaticResource x:Key="TextOnEmphasisColor" ResourceKey="SuiteInk"/>
-    <StaticResource x:Key="SelectedFillColor" ResourceKey="SuiteAmberWash"/>
+    <StaticResource x:Key="EmphasisFillColor" ResourceKey="SuiteAccent"/>
+    <StaticResource x:Key="EmphasisHoverColor" ResourceKey="SuiteAccentHover"/>
+    <StaticResource x:Key="EmphasisPressedColor" ResourceKey="SuiteAccentPressed"/>
+    <StaticResource x:Key="TextOnEmphasisColor" ResourceKey="SuiteOnAccent"/>
+    <StaticResource x:Key="SelectedFillColor" ResourceKey="SuiteAccentWash"/>
     <StaticResource x:Key="HoverFillColor" ResourceKey="SuiteHover"/>
     <StaticResource x:Key="TextDisabledColor" ResourceKey="SuiteEdgeStrong"/>
 
@@ -81,9 +79,9 @@
     <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="{StaticResource SidebarBackgroundColor}"/>
     <SolidColorBrush x:Key="NavigationViewContentBackground" Color="{StaticResource AppBackgroundColor}"/>
     <SolidColorBrush x:Key="NavigationViewSelectionIndicatorForeground" Color="{StaticResource TextPrimaryColor}"/>
-    <SolidColorBrush x:Key="NavigationViewItemForegroundSelected" Color="{StaticResource TextOnEmphasisColor}"/>
-    <SolidColorBrush x:Key="NavigationViewItemForegroundSelectedPointerOver" Color="{StaticResource TextOnEmphasisColor}"/>
-    <SolidColorBrush x:Key="NavigationViewItemForegroundSelectedPressed" Color="{StaticResource TextOnEmphasisColor}"/>
+    <SolidColorBrush x:Key="NavigationViewItemForegroundSelected" Color="{StaticResource TextPrimaryColor}"/>
+    <SolidColorBrush x:Key="NavigationViewItemForegroundSelectedPointerOver" Color="{StaticResource TextPrimaryColor}"/>
+    <SolidColorBrush x:Key="NavigationViewItemForegroundSelectedPressed" Color="{StaticResource TextPrimaryColor}"/>
     <SolidColorBrush x:Key="NavigationViewItemBackgroundSelected" Color="{StaticResource SelectedFillColor}"/>
     <SolidColorBrush x:Key="NavigationViewItemBackgroundSelectedPointerOver" Color="{StaticResource EmphasisHoverColor}"/>
     <SolidColorBrush x:Key="NavigationViewItemBackgroundSelectedPressed" Color="{StaticResource EmphasisPressedColor}"/>
@@ -91,7 +89,7 @@
     <SolidColorBrush x:Key="ListViewItemBackgroundSelectedPointerOver" Color="{StaticResource EmphasisHoverColor}"/>
     <SolidColorBrush x:Key="ListViewItemBackgroundSelectedPressed" Color="{StaticResource EmphasisPressedColor}"/>
     <SolidColorBrush x:Key="ListViewItemBackgroundPointerOver" Color="{StaticResource HoverFillColor}"/>
-    <SolidColorBrush x:Key="ListViewItemForegroundSelected" Color="{StaticResource TextOnEmphasisColor}"/>
-    <SolidColorBrush x:Key="ListViewItemForegroundSelectedPointerOver" Color="{StaticResource TextOnEmphasisColor}"/>
-    <SolidColorBrush x:Key="ListViewItemForegroundSelectedPressed" Color="{StaticResource TextOnEmphasisColor}"/>
+    <SolidColorBrush x:Key="ListViewItemForegroundSelected" Color="{StaticResource TextPrimaryColor}"/>
+    <SolidColorBrush x:Key="ListViewItemForegroundSelectedPointerOver" Color="{StaticResource TextPrimaryColor}"/>
+    <SolidColorBrush x:Key="ListViewItemForegroundSelectedPressed" Color="{StaticResource TextPrimaryColor}"/>
 </ResourceDictionary>
