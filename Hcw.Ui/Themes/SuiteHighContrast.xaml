@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The high contrast theme: Windows supplies the colours. Merge it into the app's own HighContrast theme dictionary. -->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="AppBackgroundBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+    <SolidColorBrush x:Key="SurfaceBackgroundBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+    <SolidColorBrush x:Key="BrandAccentBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
+    <SolidColorBrush x:Key="BrandAccentAccessibleBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
+    <SolidColorBrush x:Key="BorderSubtleBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+    <SolidColorBrush x:Key="BorderStrongBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+    <SolidColorBrush x:Key="FocusIndicatorBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
+    <SolidColorBrush x:Key="EmphasisFillBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
+    <SolidColorBrush x:Key="TextOnEmphasisBrush" Color="{ThemeResource SystemColorHighlightTextColor}"/>
+    <SolidColorBrush x:Key="SelectedFillBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
+    <SolidColorBrush x:Key="NavigationViewSelectionIndicatorForeground" Color="{ThemeResource SystemColorHighlightColor}"/>
+</ResourceDictionary>
