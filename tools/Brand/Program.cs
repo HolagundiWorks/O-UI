@@ -12,6 +12,7 @@ var apps = new (string Folder, string Name, Color Plate)[]
     ("studio", "O-Studio", ColorTranslator.FromHtml("#FF6B00")),
     ("metra", "O-Metra", ColorTranslator.FromHtml("#1F5FD1")),
     ("draft", "O-Draft", ColorTranslator.FromHtml("#17181B")),
+    ("osas", "OSAS", ColorTranslator.FromHtml("#17181B")),
 };
 var ink = ColorTranslator.FromHtml("#17181B");
 var inkSoft = ColorTranslator.FromHtml("#45484D");
@@ -20,10 +21,13 @@ foreach (var (folder, name, plate) in apps)
 {
     var dir = Path.Combine(output, folder);
     Directory.CreateDirectory(dir);
-    Mark(1024, plate).Save(Path.Combine(dir, "mark.png"), ImageFormat.Png);
-    Mark(256, plate).Save(Path.Combine(dir, "mark-256.png"), ImageFormat.Png);
-    Ico(Path.Combine(dir, "app.ico"), plate);
-    Lockup(name, plate).Save(Path.Combine(dir, "lockup.png"), ImageFormat.Png);
+    var suite = folder == "osas"; // the suite's own mark has the three accents as a strip along the bottom
+    Mark(1024, plate, suite: suite).Save(Path.Combine(dir, "mark.png"), ImageFormat.Png);
+    Mark(256, plate, suite: suite).Save(Path.Combine(dir, "mark-256.png"), ImageFormat.Png);
+    Ico(Path.Combine(dir, "app.ico"), plate, suite);
+    Lockup(name, plate, suite).Save(Path.Combine(dir, "lockup.png"), ImageFormat.Png);
+    if (suite)
+        continue;
 
     var tiles = Path.Combine(dir, "tiles");
     Directory.CreateDirectory(tiles);
@@ -48,7 +52,7 @@ static Graphics Canvas(Bitmap bitmap)
 }
 
 // The glyph is drawn in the coordinates of the original 256 pixel plate (plate 31..224); the transform fits the plate to the target square.
-static void DrawMark(Graphics g, float x, float y, float size, Color plate, bool full)
+static void DrawMark(Graphics g, float x, float y, float size, Color plate, bool full, bool suite = false)
 {
     var state = g.Save();
     var s = size / 194f;
@@ -64,6 +68,19 @@ static void DrawMark(Graphics g, float x, float y, float size, Color plate, bool
         }
         else
             g.FillRectangle(brush, 31, 31, 194, 194);
+    }
+    if (suite)
+    {
+        using var clip = Rounded(31, 31, 194, 194, 34);
+        var saved = g.Save();
+        g.SetClip(clip);
+        var colours = new[] { ColorTranslator.FromHtml("#FF6B00"), ColorTranslator.FromHtml("#1F5FD1"), ColorTranslator.FromHtml("#C9C6BC") };
+        for (var i = 0; i < 3; i++)
+        {
+            using var stripe = new SolidBrush(colours[i]);
+            g.FillRectangle(stripe, 31 + i * 194f / 3f, 208, 194f / 3f + 1, 17);
+        }
+        g.Restore(saved);
     }
     using var white = new Pen(Color.White) { StartCap = LineCap.Flat, EndCap = LineCap.Flat };
     white.Width = 18;
@@ -86,11 +103,11 @@ static GraphicsPath Rounded(float x, float y, float w, float h, float r)
     return path;
 }
 
-static Bitmap Mark(int size, Color plate, bool full = true)
+static Bitmap Mark(int size, Color plate, bool full = true, bool suite = false)
 {
     var bitmap = NewBitmap(size, size);
     using var g = Canvas(bitmap);
-    DrawMark(g, 0, 0, size, plate, full);
+    DrawMark(g, 0, 0, size, plate, full, suite);
     return bitmap;
 }
 
@@ -106,11 +123,11 @@ static Bitmap Wide(int w, int h, Color plate)
     return bitmap;
 }
 
-static Bitmap Lockup(string name, Color plate)
+static Bitmap Lockup(string name, Color plate, bool suite = false)
 {
     var bitmap = NewBitmap(1600, 640);
     using var g = Canvas(bitmap);
-    DrawMark(g, 40, 40, 560, plate, full: true);
+    DrawMark(g, 40, 40, 560, plate, full: true, suite: suite);
     using var title = new Font("Segoe UI Semibold", 150, FontStyle.Regular, GraphicsUnit.Pixel);
     using var line = new Font("Segoe UI", 52, FontStyle.Regular, GraphicsUnit.Pixel);
     using var small = new Font("Segoe UI Semibold", 44, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -118,18 +135,24 @@ static Bitmap Lockup(string name, Color plate)
     using var softBrush = new SolidBrush(ColorTranslator.FromHtml("#45484D"));
     using var accentBrush = new SolidBrush(plate);
     g.DrawString(name, title, inkBrush, 650, 150);
+    if (suite)
+    {
+        g.DrawString("Open Source Architecture Suit", line, softBrush, 660, 360);
+        g.DrawString("O-Studio · O-Metra · O-Draft", small, softBrush, 660, 440);
+        return bitmap;
+    }
     g.DrawString("Open Source Architecture Suit", line, softBrush, 660, 360);
     g.DrawString("OSAS", small, accentBrush, 660, 440);
     return bitmap;
 }
 
 // An ICO file whose images are PNGs, which Windows has read since Vista.
-static void Ico(string path, Color plate)
+static void Ico(string path, Color plate, bool suite = false)
 {
     var sizes = new[] { 16, 24, 32, 48, 64, 128, 256 };
     var images = sizes.Select(s =>
     {
-        using var bitmap = Mark(s, plate);
+        using var bitmap = Mark(s, plate, suite: suite);
         using var stream = new MemoryStream();
         bitmap.Save(stream, ImageFormat.Png);
         return stream.ToArray();
