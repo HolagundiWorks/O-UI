@@ -2,11 +2,11 @@
 
 The shared design of **OSAS, the Open Source Architecture Suit**: its colours, text styles, control defaults, marks and a few layout controls. O-Studio (the office app) and O-CoreOp (quantities, estimates and billing) use it now; O-Draft (drafting) is meant to follow. It is a WinUI 3 class library for .NET 8 under the MIT licence (the marks in `brand/` are separate, see `brand/LICENSE.md`). MIT code can be used inside O-CoreOp, which is AGPL-3.0, and inside O-Draft, which is MIT or Apache-2.0.
 
-| App | Was | Accent |
-|---|---|---|
-| O-Studio | AOS | Orange `#FF6B00`, ink text on it |
-| O-CoreOp | AQC | Blue `#1F5FD1`, white text on it |
-| O-Draft | AAD | Black `#1B1C20`, white text on it |
+| App | Accent |
+|---|---|
+| O-Studio | Orange `#FF6B00`, ink text on it |
+| O-CoreOp | Blue `#1F5FD1`, white text on it |
+| O-Draft | Black `#1B1C20`, white text on it |
 
 ## What is in it
 | File | What it does |
@@ -49,7 +49,7 @@ Reference the project, then in `App.xaml`:
 and on each navigation pane: `Hcw.Ui.SuiteNavigation.Apply(navigationView, Hcw.Ui.SuiteApp.Studio);`. A system control keeps its own colours unless they are set on the control, which is why the pane needs that call.
 
 ## Structure the apps share
-A menu bar, a left navigation pane with a heading for each group of pages, and the page beside it. AOS and AQC both follow this. The library holds the look; each app keeps its own pages.
+A menu bar, a left navigation pane with a heading for each group of pages, and the page beside it. O-Studio and O-CoreOp both follow this. The library holds the look; each app keeps its own pages.
 
 ## Building
 The apps reference this project by relative path (`..\..\..\hcw-ui\Hcw.Ui\Hcw.Ui.csproj`), so check it out beside them. It targets Windows App SDK 1.6, the lowest version either app uses.
