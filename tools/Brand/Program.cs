@@ -1,5 +1,5 @@
 // Draws the suite's marks and writes PNG, ICO and lockup files for each app:   dotnet run --project tools/Brand -- <output folder>
-// The mark is the AQC logo redrawn as geometry, so it can be made in any colour at any size: a half ring open to the right, a smaller
+// The mark is the O-CoreOp logo redrawn as geometry, so it can be made in any colour at any size: a half ring open to the right, a smaller
 // half ring below, and a ring at the centre, white on a plate in the app's colour.
 using System.Drawing;
 using System.Drawing.Drawing2D;
