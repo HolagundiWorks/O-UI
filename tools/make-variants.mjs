@@ -32,11 +32,20 @@ for (const [name, a] of Object.entries(accents)) {
   );
   for (const file of ["SuiteLight", "SuiteNavigation"]) {
     const template = fs.readFileSync(path.join(root, "templates", `${file}.template.xaml`), "utf8");
-    const merge = `    <ResourceDictionary.MergedDictionaries>
+    const merge = `<ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteColors.xaml"/>
         <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteAccent.${name}.xaml"/>
     </ResourceDictionary.MergedDictionaries>`;
-    fs.writeFileSync(path.join(root, `${file}.${name}.xaml`), template.replace("    <!--MERGE-->", merge).replace("__APP__", a.app));
+    fs.writeFileSync(path.join(root, `${file}.${name}.xaml`), template.replace("<!--MERGE-->", merge).replace("__APP__", a.app));
+  }
+  // Dark: accent first, then SuiteColors.Dark so the dark selection wash replaces the light one.
+  {
+    const template = fs.readFileSync(path.join(root, "templates", "SuiteDark.template.xaml"), "utf8");
+    const merge = `<ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteAccent.${name}.xaml"/>
+        <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteColors.Dark.xaml"/>
+    </ResourceDictionary.MergedDictionaries>`;
+    fs.writeFileSync(path.join(root, `SuiteDark.${name}.xaml`), template.replace("<!--MERGE-->", merge).replace("__APP__", a.app));
   }
 }
 console.log("generated", Object.keys(accents).join(", "));
