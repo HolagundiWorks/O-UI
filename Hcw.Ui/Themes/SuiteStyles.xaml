@@ -9,6 +9,32 @@
             <x:Double x:Key="Space16">16</x:Double>
             <x:Double x:Key="Space20">20</x:Double>
             <x:Double x:Key="SuiteCardGap">16</x:Double>
+            <!-- The suite scale read by SuiteScale / SuiteIconSize. The code falls back to these same values when a key is missing. -->
+            <x:Double x:Key="SuiteControlMinHeight">36</x:Double>
+            <x:Double x:Key="SuiteNavItemMinHeight">40</x:Double>
+            <x:Double x:Key="SuiteStackGap">8</x:Double>
+            <x:Double x:Key="SuiteFieldGap">12</x:Double>
+            <x:Double x:Key="SuiteSectionGap">20</x:Double>
+            <x:Double x:Key="SuiteRailWidth">56</x:Double>
+            <x:Double x:Key="SuitePaneWidth">260</x:Double>
+            <x:Double x:Key="SuiteFontBody">13</x:Double>
+            <x:Double x:Key="SuiteFontSection">15</x:Double>
+            <x:Double x:Key="SuiteFontTitle">22</x:Double>
+            <x:Double x:Key="SuiteIconRail">15</x:Double>
+            <x:Double x:Key="SuiteIconNav">15</x:Double>
+            <x:Double x:Key="SuiteIconInline">15</x:Double>
+            <x:Double x:Key="SuiteIconHeader">15</x:Double>
+            <x:Double x:Key="SuiteIconStroke">1.5</x:Double>
+            <x:Double x:Key="SuiteToolTile">36</x:Double>
+            <Thickness x:Key="SuiteContentPadding">12,10,12,12</Thickness>
+            <Thickness x:Key="SuiteControlPadding">12,4,12,4</Thickness>
+            <Thickness x:Key="SuiteStageMargin">8</Thickness>
+            <Thickness x:Key="SuiteCardPadding">12,10,12,10</Thickness>
+            <Thickness x:Key="SuiteDialogPadding">16,12,16,12</Thickness>
+            <CornerRadius x:Key="SuiteCornerButton">2</CornerRadius>
+            <CornerRadius x:Key="SuiteCornerControl">2</CornerRadius>
+            <CornerRadius x:Key="SuiteCornerChip">2</CornerRadius>
+            <CornerRadius x:Key="SuiteCornerCard">2</CornerRadius>
             <!-- Compact icon button for the activity rail (launcher About / destinations). -->
             <Style x:Key="SuiteRailButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
                 <Setter Property="Width" Value="40"/>

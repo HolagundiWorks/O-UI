@@ -13,14 +13,14 @@ public static class SuiteScale
     public static double StackGap => Double("SuiteStackGap", 8);
     public static double FieldGap => Double("SuiteFieldGap", 12);
     public static double SectionGap => Double("SuiteSectionGap", 20);
-    public static double CardGap => Double("SuiteCardGap", 8);
+    public static double CardGap => Double("SuiteCardGap", 16);
     public static double RailWidth => Double("SuiteRailWidth", 56);
     public static double PaneWidth => Double("SuitePaneWidth", 260);
     public static double FontBody => Double("SuiteFontBody", 13);
     public static double FontSection => Double("SuiteFontSection", 15);
     public static double FontTitle => Double("SuiteFontTitle", 22);
 
-    public static Thickness PageMargin => Thickness("PageMargin", new Thickness(12, 10, 12, 12));
+    public static Thickness PageMargin => Thickness("PageMargin", new Thickness(16, 12, 16, 16));
     public static Thickness ContentPadding => Thickness("SuiteContentPadding", new Thickness(12, 10, 12, 12));
     public static Thickness ControlPadding => Thickness("SuiteControlPadding", new Thickness(12, 4, 12, 4));
     public static Thickness StageMargin => Thickness("SuiteStageMargin", new Thickness(8));
