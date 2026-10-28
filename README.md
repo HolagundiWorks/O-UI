@@ -16,7 +16,7 @@ The shared design of **OSAS, the Open Source Architecture Suit**: its colours, t
 | `Themes/SuiteLight.<Accent>.xaml`, `SuiteDark.<Accent>.xaml`, `SuiteHighContrast.xaml` | Light/dark theme dictionaries per accent, plus high contrast. Generated from `Themes/templates` by `tools/make-variants.mjs` |
 | `Themes/SuiteStyles.xaml` | Text styles, control defaults, `SuiteCardGap`, `SuiteRailButtonStyle`, card and chip |
 | `Themes/SuiteNavigation.<Accent>.xaml`, `SuiteNavigation.cs` | The look of the left navigation pane |
-| `SuiteBrand.cs` | Suite and app names (`SuiteApp.Studio`, `.Metra`, `.Draft`) |
+| `SuiteBrand.cs` | Suite and app names (`SuiteApp.Studio`, `.Metra` = O-CoreOp assembly alias, `.Draft`) |
 | `SuiteLandmarks.cs` | Draft-parity landmark helpers (`Navigation` / `Main` / `status`) |
 | `SuiteShell.cs`, `SuiteActivityRail.cs`, `SuitePageHeader.cs`, `SuiteContentSheet.cs` | Launcher-style rail + stage chrome (landmarks built in) |
 | `SuiteIcon.cs`, `SuiteIcons.cs`, `SuiteScale.cs` | Shared glyphs and spacing |
