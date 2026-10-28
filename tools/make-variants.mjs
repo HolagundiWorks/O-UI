@@ -8,9 +8,9 @@ import { fileURLToPath } from "url";
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "Hcw.Ui", "Themes");
 
 const accents = {
-  Orange: { app: "O-Studio", accent: "#FF6B00", hover: "#F26400", pressed: "#E65F00", text: "#A83F00", wash: "#FFDCC2", on: "#17181B" },
+  Orange: { app: "O-Studio", accent: "#FF6B00", hover: "#F26400", pressed: "#E65F00", text: "#A83F00", wash: "#FFDCC2", on: "#1A2332" },
   Blue: { app: "O-CoreOp", accent: "#1F5FD1", hover: "#1A52B8", pressed: "#15449A", text: "#1A52B8", wash: "#D3E3FF", on: "#FFFFFF" },
-  Black: { app: "O-Draft", accent: "#1B1C20", hover: "#34363C", pressed: "#4B4E56", text: "#17181B", wash: "#E4E3DE", on: "#FFFFFF" },
+  Black: { app: "O-Draft", accent: "#1A2332", hover: "#2A3548", pressed: "#3A465C", text: "#1A2332", wash: "#D8DEE8", on: "#FFFFFF" },
 };
 
 for (const [name, a] of Object.entries(accents)) {

@@ -8,5 +8,5 @@
     <Color x:Key="SuiteAccentPressed">#E65F00</Color>
     <Color x:Key="SuiteAccentText">#A83F00</Color>
     <Color x:Key="SuiteAccentWash">#FFDCC2</Color>
-    <Color x:Key="SuiteOnAccent">#17181B</Color>
+    <Color x:Key="SuiteOnAccent">#1A2332</Color>
 </ResourceDictionary>
