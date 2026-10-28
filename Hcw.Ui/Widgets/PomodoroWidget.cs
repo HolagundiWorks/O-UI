@@ -184,7 +184,7 @@ public sealed class PomodoroWidget : WidgetWindow
     }
 
     /// <summary>Simple arc path for the dial progress ring.</summary>
-    sealed class Arc : Path
+    sealed class Arc : Microsoft.UI.Xaml.Shapes.Path
     {
         double _sweep = 360;
 

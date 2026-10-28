@@ -6,7 +6,7 @@ using WinRT.Interop;
 namespace Hcw.Ui.Widgets;
 
 /// <summary>Floating suite widget base: stay-on-top, opacity, and a right-click menu.</summary>
-abstract class WidgetWindow : Window
+public abstract class WidgetWindow : Window
 {
     const int HwndTopmost = -1;
     const int HwndNotopmost = -2;
