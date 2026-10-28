@@ -17,6 +17,7 @@ The shared design of **OSAS, the Open Source Architecture Suit**: its colours, t
 | `Themes/SuiteStyles.xaml` | Text styles (page title, section title, body, secondary, caption, table header and cell), defaults for buttons, text boxes and combo boxes, the primary button in the accent colour, a card and a chip |
 | `Themes/SuiteNavigation.<Accent>.xaml`, `SuiteNavigation.cs` | The look of the left navigation pane: ink indicator, accent wash on the selected page |
 | `SuiteBrand.cs` | The names of the suite and its apps (`SuiteApp.Studio`, `.Metra`, `.Draft`) |
+| `SuiteLandmarks.cs` | Draft-parity landmark helpers (`Navigation` / `Main` / `status`) for app shells until SuiteShell lands in this package |
 | `brand/`, `tools/Brand` | The marks: the O-CoreOp logo redrawn as geometry in each app's colour, as PNG, ICO, a lockup and the Windows tiles. Run `dotnet run --project tools/Brand -- brand` to draw them again |
 | `Controls/FlexBar.cs` | A row of buttons that wraps when the page is narrow |
 
