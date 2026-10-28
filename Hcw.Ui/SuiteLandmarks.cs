@@ -6,9 +6,8 @@ namespace Hcw.Ui;
 
 /// <summary>
 /// Draft-parity landmark helpers for suite shells (Navigation / Main / status).
-/// Call from each app after the chrome tree is built. Full SuiteShell chrome types
-/// (rail, stage host) still live outside this package; use these helpers on the
-/// regions the app owns until SuiteShell ships here with landmarks built in.
+/// <see cref="SuiteShell"/> applies Navigation/Main on its rail and stage;
+/// apps still call these for menu bars, status strips, and NavigationView chrome.
 /// </summary>
 public static class SuiteLandmarks
 {

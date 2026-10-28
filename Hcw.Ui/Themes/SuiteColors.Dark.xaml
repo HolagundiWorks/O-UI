@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Dark-stage neutrals for SuiteDark.* theme dictionaries (office soft-UI, not CAD black canvas).
+  Light neutrals stay in SuiteColors.xaml.
+-->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="SuiteBackground">#1B1F28</Color>
+    <Color x:Key="SuiteSidebar">#151922</Color>
+    <Color x:Key="SuiteSurface">#242A36</Color>
+    <Color x:Key="SuiteInk">#EEF2F8</Color>
+    <Color x:Key="SuiteInkSoft">#A8B0BD</Color>
+    <Color x:Key="SuiteEdge">#3A4250</Color>
+    <Color x:Key="SuiteEdgeStrong">#6B7280</Color>
+    <Color x:Key="SuiteHover">#2A3140</Color>
+    <Color x:Key="SuiteDanger">#F87171</Color>
+    <!-- Dark selection wash (replaces light SuiteAccentWash from the accent file). -->
+    <Color x:Key="SuiteAccentWash">#2A3F66</Color>
+</ResourceDictionary>
