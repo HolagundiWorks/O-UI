@@ -6,12 +6,12 @@ The shared design of **OSAS, the Open Source Architecture Suit**: its colours, t
 |---|---|
 | O-Studio | Orange `#FF6B00`, ink text on it |
 | O-CoreOp | Blue `#1F5FD1`, white text on it |
-| O-Draft | Black `#1B1C20`, white text on it |
+| O-Draft | Black `#1A2332`, white text on it |
 
 ## What is in it
 | File | What it does |
 |---|---|
-| `Themes/SuiteColors.xaml` | The neutral colours, in one place: warm paper and ink |
+| `Themes/SuiteColors.xaml` | The neutral colours, in one place: cool soft-UI glass (`#E4EAF2`) and ink (aligned with O-Draft) |
 | `Themes/SuiteAccent.Orange.xaml`, `.Blue.xaml`, `.Black.xaml` | The accent of each app: fill, hover, pressed, text, selection wash, and the text colour on a fill |
 | `Themes/SuiteLight.<Accent>.xaml`, `SuiteHighContrast.xaml` | The light theme in that accent (app brushes plus the overrides the controls need), and the high-contrast theme. Generated from `Themes/templates` by `tools/make-variants.mjs` |
 | `Themes/SuiteStyles.xaml` | Text styles (page title, section title, body, secondary, caption, table header and cell), defaults for buttons, text boxes and combo boxes, the primary button in the accent colour, a card and a chip |
