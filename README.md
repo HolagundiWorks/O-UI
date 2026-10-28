@@ -67,7 +67,7 @@ On each navigation pane: `Hcw.Ui.SuiteNavigation.Apply(navigationView, Hcw.Ui.Su
 A menu bar, a left navigation pane (or activity rail) with destinations, and the page beside it. O-Studio and O-CoreOp use NavigationView; the OSAS launcher uses `SuiteShell` / `SuiteActivityRail`. The library holds the look; each app keeps its own pages.
 
 ## Building
-The apps reference this project by relative path (`..\..\..\hcw-ui\Hcw.Ui\Hcw.Ui.csproj`), so check the repository out beside them as the folder name `hcw-ui` (this repo is also published as `HolagundiWorks/O-UI`). It targets Windows App SDK 1.6, the lowest version either app uses.
+The apps reference this project by relative path (`..\..\..\o-ui\Hcw.Ui\Hcw.Ui.csproj`), so clone `HolagundiWorks/O-UI` beside them as the folder name `o-ui`. The assembly name remains `Hcw.Ui`. It targets Windows App SDK 1.6, the lowest version either app uses.
 
 ## Licence
 The code is MIT licensed (`LICENSE`). The marks in `brand/` are not; see `brand/LICENSE.md`.
