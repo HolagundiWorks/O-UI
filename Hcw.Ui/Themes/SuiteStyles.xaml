@@ -11,6 +11,7 @@
             <x:Double x:Key="SuiteCardGap">16</x:Double>
             <!-- The suite scale read by SuiteScale / SuiteIconSize. The code falls back to these same values when a key is missing. -->
             <x:Double x:Key="SuiteControlMinHeight">36</x:Double>
+            <x:Double x:Key="SuiteHeaderHeight">44</x:Double>
             <x:Double x:Key="SuiteNavItemMinHeight">40</x:Double>
             <x:Double x:Key="SuiteStackGap">8</x:Double>
             <x:Double x:Key="SuiteFieldGap">12</x:Double>
