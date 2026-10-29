@@ -56,6 +56,8 @@
             <x:Double x:Key="SuiteFontDisplay">22</x:Double>
             <x:Double x:Key="SuiteFieldWidth">120</x:Double>
             <x:Double x:Key="SuiteDialogActionMinWidth">72</x:Double>
+            <!-- Section tabs (Pivot) default to 24 px type, far above the rest of the page. -->
+            <x:Double x:Key="PivotHeaderItemFontSize">14</x:Double>
             <!-- Fluent minimums that would otherwise keep controls taller than the scale. -->
             <x:Double x:Key="TextControlThemeMinHeight">26</x:Double>
             <x:Double x:Key="ComboBoxMinHeight">26</x:Double>
