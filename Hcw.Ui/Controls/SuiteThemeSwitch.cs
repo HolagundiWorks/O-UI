@@ -14,8 +14,8 @@ public sealed class SuiteThemeSwitch : ToggleButton
     {
         Content = "Theme";
         MinWidth = 72;
-        MinHeight = 32;
-        Padding = new Thickness(10, 4, 10, 4);
+        MinHeight = SuiteScale.ControlMinHeight;
+        Padding = new Thickness(8, 2, 8, 2);
         AutomationProperties.SetName(this, "Theme");
         ToolTipService.SetToolTip(this, "Switch light or dark theme");
         Click += OnClick;
