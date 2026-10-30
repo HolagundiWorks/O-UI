@@ -30,10 +30,14 @@ public static class SuiteScale
     public static double MenuItemHeight => Double("SuiteMenuItemHeight", 22);
     public static double TabHeight => Double("SuiteTabHeight", 28);
     public static double StatusBarHeight => Double("SuiteStatusBarHeight", 22);
+
+    /// <summary>O-Draft <c>PaddingStatus</c> — full-bleed status row inset.</summary>
+    public static Thickness StatusBarPadding => Thickness("SuiteStatusBarPadding", new Thickness(8, 2, 8, 2));
     public static double PanelHeaderHeight => Double("SuitePanelHeaderHeight", 24);
     public static double PropertyRowHeight => Double("SuitePropertyRowHeight", 26);
     public static double ControlHeightCompact => Double("SuiteControlHeightCompact", 22);
     public static double FontCaption => Double("SuiteFontCaption", 11);
+    public static double FontIcon => Double("SuiteFontIcon", 14);
 
     public static Thickness PageMargin => Thickness("PageMargin", new Thickness(16, 12, 16, 16));
     public static Thickness ContentPadding => Thickness("SuiteContentPadding", new Thickness(12, 8, 12, 8));

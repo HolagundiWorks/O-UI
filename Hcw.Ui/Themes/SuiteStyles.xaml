@@ -47,6 +47,7 @@
             <x:Double x:Key="SuiteMenuItemHeight">22</x:Double>
             <x:Double x:Key="SuiteTabHeight">28</x:Double>
             <x:Double x:Key="SuiteStatusBarHeight">22</x:Double>
+            <Thickness x:Key="SuiteStatusBarPadding">8,2,8,2</Thickness>
             <x:Double x:Key="SuitePanelHeaderHeight">24</x:Double>
             <x:Double x:Key="SuitePropertyRowHeight">26</x:Double>
             <x:Double x:Key="SuiteControlHeightCompact">22</x:Double>
