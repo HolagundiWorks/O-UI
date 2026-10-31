@@ -1,6 +1,6 @@
-# Hcw.Ui
+# O-UI
 
-The shared design of **OSAS, the Open Source Architecture Suit**: its colours, text styles, control defaults, marks, suite shell chrome, and a few layout controls. O-Studio (the office app) and O-CoreOp (quantities, estimates and billing) use it now; the OSAS launcher uses the activity-rail shell; O-Draft (drafting) is meant to follow. It is a WinUI 3 class library for .NET 8 under the MIT licence (the marks in `brand/` are separate, see `brand/LICENSE.md`). MIT code can be used inside O-CoreOp, which is AGPL-3.0, and inside O-Draft, which is MIT or Apache-2.0.
+WinUI 3 class library **`O.Ui`** (folder `o-ui/O.Ui/`). **HCW.ui / `Hcw.Ui` is retired** — use this repository only. The shared design of **OSAS, the Open Source Architecture Suit**: colours, text styles, control defaults, marks, suite shell chrome, and a few layout controls. User-visible app names and file terms match **`docs/SUITE.md`** in any suite app repo (section 7). O-Studio (the office app) and O-CoreOp (quantities, estimates and billing) use it now; the OSAS launcher uses the activity-rail shell; O-Draft (drafting) is meant to follow. Targets .NET 8 under the MIT licence (the marks in `brand/` are separate, see `brand/LICENSE.md`). MIT code can be used inside O-CoreOp, which is AGPL-3.0, and inside O-Draft, which is MIT or Apache-2.0.
 
 | App | Accent |
 |---|---|
@@ -33,41 +33,41 @@ Reference the project, then in `App.xaml`:
 ```xml
 <ResourceDictionary.MergedDictionaries>
     <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-    <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteColors.xaml"/>
-    <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteAccent.Orange.xaml"/>  <!-- or .Blue, .Black -->
-    <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteStyles.xaml"/>
+    <ResourceDictionary Source="ms-appx:///O.Ui/Themes/SuiteColors.xaml"/>
+    <ResourceDictionary Source="ms-appx:///O.Ui/Themes/SuiteAccent.Orange.xaml"/>  <!-- or .Blue, .Black -->
+    <ResourceDictionary Source="ms-appx:///O.Ui/Themes/SuiteStyles.xaml"/>
 </ResourceDictionary.MergedDictionaries>
 <ResourceDictionary.ThemeDictionaries>
     <ResourceDictionary x:Key="Light">
         <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteLight.Orange.xaml"/>
+            <ResourceDictionary Source="ms-appx:///O.Ui/Themes/SuiteLight.Orange.xaml"/>
         </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
     <ResourceDictionary x:Key="Default">
         <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteDark.Orange.xaml"/>
+            <ResourceDictionary Source="ms-appx:///O.Ui/Themes/SuiteDark.Orange.xaml"/>
         </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
     <ResourceDictionary x:Key="Dark">
         <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteDark.Orange.xaml"/>
+            <ResourceDictionary Source="ms-appx:///O.Ui/Themes/SuiteDark.Orange.xaml"/>
         </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
     <ResourceDictionary x:Key="HighContrast">
         <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteHighContrast.xaml"/>
+            <ResourceDictionary Source="ms-appx:///O.Ui/Themes/SuiteHighContrast.xaml"/>
         </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
 </ResourceDictionary.ThemeDictionaries>
 ```
 
-On each navigation pane: `Hcw.Ui.SuiteNavigation.Apply(navigationView, Hcw.Ui.SuiteApp.Studio);`. For the launcher rail/stage host: `new SuiteShell()` (landmarks applied on rail and stage). Theme: `SuiteThemeSwitch.Attach(window)` or `SuiteAppearance.Apply(window)`.
+On each navigation pane: `O.Ui.SuiteNavigation.Apply(navigationView, O.Ui.SuiteApp.Studio);`. For the launcher rail/stage host: `new SuiteShell()` (landmarks applied on rail and stage). Theme: `SuiteThemeSwitch.Attach(window)` or `SuiteAppearance.Apply(window)`.
 
 ## Structure the apps share
 A menu bar, a left navigation pane (or activity rail) with destinations, and the page beside it. O-Studio and O-CoreOp use NavigationView; the OSAS launcher uses `SuiteShell` / `SuiteActivityRail`. The library holds the look; each app keeps its own pages.
 
 ## Building
-The apps reference this project by relative path (`..\..\..\o-ui\Hcw.Ui\Hcw.Ui.csproj`), so clone `HolagundiWorks/O-UI` beside them as the folder name `o-ui`. The assembly name remains `Hcw.Ui`. It targets Windows App SDK 1.6, the lowest version either app uses.
+The apps reference this project by relative path (`..\..\..\o-ui\O.Ui\O.Ui.csproj`), so clone `HolagundiWorks/O-UI` beside them as the folder name `o-ui`. The assembly name remains `O.Ui`. It targets Windows App SDK 1.6, the lowest version either app uses.
 
 ## Licence
 The code is MIT licensed (`LICENSE`). The marks in `brand/` are not; see `brand/LICENSE.md`.

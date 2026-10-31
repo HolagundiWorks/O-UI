@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "Hcw.Ui", "Themes");
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "O.Ui", "Themes");
 
 const accents = {
   Orange: { app: "O-Studio", accent: "#FF6B00", hover: "#F26400", pressed: "#E65F00", text: "#A83F00", wash: "#FFDCC2", on: "#1A2332" },
@@ -33,8 +33,8 @@ for (const [name, a] of Object.entries(accents)) {
   for (const file of ["SuiteLight", "SuiteNavigation"]) {
     const template = fs.readFileSync(path.join(root, "templates", `${file}.template.xaml`), "utf8");
     const merge = `<ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteColors.xaml"/>
-        <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteAccent.${name}.xaml"/>
+        <ResourceDictionary Source="ms-appx:///O.Ui/Themes/SuiteColors.xaml"/>
+        <ResourceDictionary Source="ms-appx:///O.Ui/Themes/SuiteAccent.${name}.xaml"/>
     </ResourceDictionary.MergedDictionaries>`;
     fs.writeFileSync(path.join(root, `${file}.${name}.xaml`), template.replace("<!--MERGE-->", merge).replace("__APP__", a.app));
   }
@@ -42,8 +42,8 @@ for (const [name, a] of Object.entries(accents)) {
   {
     const template = fs.readFileSync(path.join(root, "templates", "SuiteDark.template.xaml"), "utf8");
     const merge = `<ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteAccent.${name}.xaml"/>
-        <ResourceDictionary Source="ms-appx:///Hcw.Ui/Themes/SuiteColors.Dark.xaml"/>
+        <ResourceDictionary Source="ms-appx:///O.Ui/Themes/SuiteAccent.${name}.xaml"/>
+        <ResourceDictionary Source="ms-appx:///O.Ui/Themes/SuiteColors.Dark.xaml"/>
     </ResourceDictionary.MergedDictionaries>`;
     fs.writeFileSync(path.join(root, `SuiteDark.${name}.xaml`), template.replace("<!--MERGE-->", merge).replace("__APP__", a.app));
   }
